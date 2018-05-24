@@ -19,11 +19,11 @@ const mqpacker = require('css-mqpacker');
 
 // Setting
 const path = {
-  dist: './dist',
-  distCSS: './dist/assets/styles',
+  dist: './docs',
+  distCSS: './docs/assets/styles',
   srcImg: 'src/images/**/*.{jpg,jpeg,png,gif,svg}',
-  distImg: './dist/assets/images',
-  distMedia: './dist/assets/medias'
+  distImg: './docs/assets/images',
+  distMedia: './docs/assets/medias'
 }
 
 
@@ -103,7 +103,7 @@ gulp.task("watch", (done) => {
   gulp.watch("./src/**/*.scss", gulp.parallel("sass"))
   gulp.watch(path.srcImg, gulp.parallel("img"))
   gulp.watch("./src/media/**/*", gulp.parallel("copy"))
-  gulp.watch(["./dist/**/*.html", "./dist/**/*.css", "./dist/**/*.js"], browserReload)
+  gulp.watch(["./docs/**/*.html", "./docs/**/*.css", "./dist/**/*.js"], browserReload)
 })
 
 gulp.task("pug-dev", gulp.series(
