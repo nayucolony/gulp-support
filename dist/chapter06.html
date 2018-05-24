@@ -1,0 +1,483 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+  
+   | Webデザイナーの仕事を楽にする! gulpではじめるWeb制作ワークフロー入門 公式サポートサイト
+  
+
+  </title>
+  <link rel="stylesheet" href="./assets/styles/common.css">
+</head>
+
+<body>
+
+    
+
+  <header class="c-header">
+    <div class="c-header__inner">
+      <h1 class="c-header__brand">
+        <a href="/">
+        gulpではじめるWeb制作ワークフロー入門
+        </a>
+      </h1>
+      <nav class="c-global-nav">
+        <ul class="c-global-nav__list">
+          <li>
+            <a href="/">HOME</a>
+          </li>
+          <li>
+            <a href="/chapter01.html">
+              サンプルコード
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+  </header>
+
+
+
+
+      <div class="l-content-wrap">
+        <aside class="l-sidebar">
+          
+
+<nav class="c-toc">
+    <ul>
+        <li>
+            <a href="./chapter01.html">CHAPTER 1</a>
+        </li>
+        <li>
+            <a href="./chapter02.html">CHAPTER 2</a>
+        </li>
+        <li>
+            <a href="./chapter03.html">CHAPTER 3</a>
+        </li>
+        <li>
+            <a href="./chapter04.html">CHAPTER 4</a>
+            
+        </li>
+        <li>
+            <a href="./chapter05.html">CHAPTER 5</a>
+            
+        </li>
+        <li>
+            <a href="./chapter06.html">CHAPTER 6</a>
+            
+            <ul>
+              
+              <li>
+              <a href="#34">
+                SECTION
+                34
+                webpackの基本的な使い方</a>
+              </li>
+              
+              <li>
+              <a href="#35">
+                SECTION
+                35
+                webpackを設定する</a>
+              </li>
+              
+              <li>
+              <a href="#36">
+                SECTION
+                36
+                プラグインのインストール</a>
+              </li>
+              
+              <li>
+              <a href="#37">
+                SECTION
+                37
+                ライブラリの管理</a>
+              </li>
+              
+              <li>
+              <a href="#37">
+                SECTION
+                37
+                ライブラリの管理</a>
+              </li>
+              
+              </ul>
+            
+        </li>
+        <li>
+            <a href="./chapter07.html">CHAPTER 7</a>
+            
+        </li>
+
+    </ul>
+</nav>
+
+        </aside>
+        <main class="l-main">
+          <div class="l-main__inner">
+            
+              <section class="l-section" id="34">
+                <h3>SECTION
+                  34
+                    webpackの基本的な使い方
+                </h3>
+                
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      171ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        package.json
+                      </p>
+                      <pre class="line-numbers">
+  <code class="lang-json">{
+  &#34;description&#34;: &#34;...&#34;,
+  &#34;repository&#34;: &#34;...&#34;,
+  &#34;scripts&#34;: {
+    &#34;prod&#34;: &#34;webpack --mode production&#34;,
+    &#34;dev&#34;: &#34;webpack --mode development -w&#34;
+  },
+（省略）
+}</code></pre>
+                    </div>
+
+                  </article>
+                  
+              </section>
+              
+              <section class="l-section" id="35">
+                <h3>SECTION
+                  35
+                    webpackを設定する
+                </h3>
+                
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      172ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        webpack.config.js
+                      </p>
+                      <pre class="line-numbers">
+  <code class="lang-js">module.exports = {
+  entry: &#39;./src/js/app.js&#39;,
+}</code></pre>
+                    </div>
+
+                  </article>
+                  
+              </section>
+              
+              <section class="l-section" id="36">
+                <h3>SECTION
+                  36
+                    プラグインのインストール
+                </h3>
+                
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      176ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        webpack.config.js
+                      </p>
+                      <pre class="line-numbers">
+  <code class="lang-js">module.exports = {
+  entry: &#39;./src/js/main.js&#39;,
+  module: {} // 追記
+}</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      176ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        webpack.config.js
+                      </p>
+                      <pre class="line-numbers">
+  <code class="lang-js">module.exports = {
+  entry: &#39;./src/js/main.js&#39;,
+  module: {
+    rules: [] // 追記
+  }
+}</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      177ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        webpack.config.js
+                      </p>
+                      <pre class="line-numbers">
+  <code class="lang-js">module.exports = {
+  entry: &#39;./src/js/main.js&#39;,
+  output: {
+    filename: &#39;bundle.js&#39;
+  },
+  module: {
+    rules: [
+      {                     // 追記
+        test: /.js$/,       //
+        use: &#39;babel-loader&#39; //
+      }                     //
+    ]
+  }
+}</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      179ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        webpack.config.js
+                      </p>
+                      <pre class="line-numbers">
+  <code class="lang-js">module.exports = {
+  entry: &#39;./src/js/main.js&#39;,
+  output: {
+    filename: &#39;./dist/bundle.js&#39;
+  },
+  module: {
+    rules: [
+      {
+        test: /.js$/,
+        use: {
+          loader: &#39;babel-loader&#39;,
+          options: {
+            presets: [&#39;@babel/preset-env&#39;]
+          }
+        }
+      }
+    ]
+  }
+}</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      180ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        main.js
+                      </p>
+                      <pre class="line-numbers">
+  <code class="lang-js">const babel = () =&gt; {
+  console.log(&#39;hello world&#39;)
+}
+
+babel()</code></pre>
+                    </div>
+
+                  </article>
+                  
+              </section>
+              
+              <section class="l-section" id="37">
+                <h3>SECTION
+                  37
+                    ライブラリの管理
+                </h3>
+                
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      183ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        main.js
+                      </p>
+                      <pre class="line-numbers">
+  <code class="lang-js">import $ from &#39;jquery&#39;
+  $(&#39;button&#39;).on(&#39;click&#39;, () =&gt; {
+  window.alert(&#39;hello webpack&#39;)
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+              </section>
+              
+              <section class="l-section" id="37">
+                <h3>SECTION
+                  37
+                    ライブラリの管理
+                </h3>
+                
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      186ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        main.js
+                      </p>
+                      <pre class="line-numbers">
+  <code class="lang-js">import $ from &#39;jquery&#39;
+import &#39;slick-carousel&#39;
+import &#39;../../node_modules/slick-carousel/slick/slick.css&#39;
+import &#39;../../node_modules/slick-carousel/slick/slick-theme.css&#39;</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      187ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        webpack.config.js
+                      </p>
+                      <pre class="line-numbers">
+  <code class="lang-js">module.exports = {
+  entry: &#39;./src/js/app.js&#39;,
+  module: {
+    rules: [
+      {
+        test: /.js$/,
+        use: {
+          loader: &#39;babel-loader&#39;,
+          options: {
+            presets: [&#39;@babel/preset-env&#39;]
+          }
+        }
+      },
+      {
+        test: /.css$/,
+        use: [&#39;css-loader&#39;]
+      }
+    ]
+  }
+}</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      189ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        webpack.config.js
+                      </p>
+                      <pre class="line-numbers">
+  <code class="lang-js">module.exports = {
+  entry: &#39;./src/js/main.js&#39;,
+  module: {
+    rules: [
+      {
+        test: /.js$/,
+        use: {
+          loader: &#39;babel-loader&#39;,
+          options: {
+            presets: [&#39;@babel/preset-env&#39;]
+          }
+        }
+      },
+      {
+        test: /.css$/,
+        use: [&#39;style-loader&#39;, &#39;css-loader&#39;]
+      },
+      {
+        test: /.gif|png|jpg|eot|wof|woff|ttf|svg$/,
+        use: [&#39;url-loader&#39;]
+      }
+    ]
+  }
+}</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      191ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        webpack.config.js
+                      </p>
+                      <pre class="line-numbers">
+  <code class="lang-js">module.exports = {
+  entry: &#39;./src/js/main.js&#39;,
+  module: {
+    rules: [
+      {
+        test: /.js$/,
+        use: {
+          loader: &#39;babel-loader&#39;,
+          options: {
+            presets: [&#39;@babel/preset-env&#39;]
+          }
+        }
+      },
+      {
+        test: /.css$/
+        use: [&#39;style-loader&#39;, &#39;css-loader&#39;]
+      },
+      {
+        test: /.gif|png|jpg|eot|wof|woff|ttf|svg$/,
+        use: [&#39;url-loader&#39;]
+      }
+    ]
+  }
+}</code></pre>
+                    </div>
+
+                  </article>
+                  
+              </section>
+              
+          </div>
+        </main>
+      </div>
+
+
+
+
+      <script src="main.js"></script>
+  </body>
+
+  </html>

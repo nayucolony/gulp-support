@@ -1,0 +1,196 @@
+<%
+
+var codeblocks = [
+  {
+    "section_no": 38,
+    "section_title": "EditorConfigを利用しよう",
+    "codes": [
+      {
+        "code": `
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+        `,
+        "lang": "",
+        "file": ".editorconfig",
+        "page": 196
+      },
+    ]
+  },
+  {
+    "section_no": 39,
+    "section_title": "lintを利用しよう",
+    "codes": [
+      {
+        "code": `
+
+{
+  "description": "...",
+  （省略）
+  "stylelint": {
+    "extends": "stylelint-config-standard"
+  }
+}
+
+        `,
+        "lang": "",
+        "file": "package.json",
+        "page": 202
+      },
+      {
+        "code": `
+
+a {
+  margin: 0px;
+}
+
+        `,
+        "lang": "scss",
+        "file": "common.scss",
+        "page": 202
+      },
+      {
+        "code": `
+
+const name = 'John'
+
+if (name == 'John') {
+  console.log('hello world')
+}
+
+        `,
+        "lang": "js",
+        "file": "main.js",
+        "page": 206
+      },
+      {
+        "code": `
+
+{
+  "description": "...",
+  （中略）
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx eslint ./src/js"
+    }
+  }
+}
+
+        `,
+        "lang": "",
+        "file": "package.json",
+        "page": 208
+      },
+    ]
+  },
+  {
+    "section_no": 40,
+    "section_title": "Prettierを利用しよう",
+    "codes": [
+      {
+        "code": `
+
+foo(reallyLongArg(), omgSoManyParameters(), IShouldRefactorThis(), isThereSeriouslyAnotherOne());
+        `,
+        "lang": "",
+        "file": "main.js",
+        "page": 211
+      },
+      {
+        "code": `
+
+module.exports = {
+  extends: ["standard", "prettier"],
+  plugins: ["prettier"],
+  rules: {
+    "prettier/prettier": "error",
+  }
+}
+        `,
+        "lang": "js",
+        "file": "eslintrc.js",
+        "page": 217
+      },
+      {
+        "code": `
+
+module.exports = {
+  extends: ["standard", "prettier"],
+  plugins: ["prettier"],
+  rules: {
+    "prettier/prettier": [
+      "error",
+      {
+        semi: false,
+        singleQuote: true
+      }
+    ]
+  }
+}
+        `,
+        "lang": "js",
+        "file": "eslintrc.js",
+        "page": 217
+      },
+    ]
+  }
+]
+
+%>
+
+<% include _partial/head.ejs %>
+    <% include _partial/header.ejs %>
+
+        <div class="l-content-wrap">
+          <aside class="l-sidebar">
+          <%- include('./_partial/code-toc.ejs', {data:codeblocks,page:7}) %>
+          </aside>
+          <main class="l-main">
+          <div class="l-main__inner">
+            <% for(section of codeblocks ){%>
+            <section class="l-section" id="<%= section.section_no %>">
+              <h3>SECTION
+                <%= section.section_no %>
+                <%= section.section_title %>
+              </h3>
+              <% for(code of section.codes){%>
+                <article class="p-code-chank">
+                  <p>
+                    📖
+                    <%= code.page %>ページ
+                  </p>
+                  <div class="c-syntax-area">
+                    <p class="c-syntax-area__file-name">
+                      <%= code.file %>
+                    </p>
+                    <pre class="line-numbers">
+  <code class="lang-<%= code.lang %>"><%= code.code.trim(/^\s+|\s+$/g,'') %></code></pre>
+                  </div>
+
+                </article>
+                <% } %>
+            </section>
+            <% } %>
+          </div>
+          </main>
+        </div>
+
+
+
+
+
+      <script src="main.js"></script>
+  </body>
+
+  </html>

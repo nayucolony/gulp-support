@@ -1,0 +1,19 @@
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+@import "./_foundation/variable.scss";
+
+@import "./_layout/all.scss";
+
+@import "./_project/all.scss";
+
+@import "./_component/toc.scss";
+@import "./_component/syntax-area.scss";
+@import "./_component/hero.scss";
+@import "./_component/header.scss";
+@import "./_component/global-nav.scss";
+@import "./_component/hero.scss";
+@import "./_component/copyright.scss";
+
+h2 {
+  font-weight: bold;
+}

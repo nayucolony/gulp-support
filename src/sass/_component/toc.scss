@@ -1,0 +1,18 @@
+.c-toc {
+  position: sticky;
+  top: 0;
+  ul {
+    list-style-type: none;
+    font-size: 1rem;
+    padding-left: 1.5rem;
+
+  }
+  li {
+    &:not(:last-child) {
+      margin-bottom: .5em;
+    }
+    > ul {
+      margin-top: 0.25em;
+    }
+  }
+}

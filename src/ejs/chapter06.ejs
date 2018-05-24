@@ -1,0 +1,284 @@
+<%
+
+var codeblocks = [
+  {
+    "section_no": 34,
+    "section_title": "webpackの基本的な使い方",
+    "codes": [
+      {
+        "code": `
+{
+  "description": "...",
+  "repository": "...",
+  "scripts": {
+    "prod": "webpack --mode production",
+    "dev": "webpack --mode development -w"
+  },
+（省略）
+}`,
+        "lang": "json",
+        "file": "package.json",
+        "page": 171
+      },
+    ]
+  },
+  {
+    "section_no": 35,
+    "section_title": "webpackを設定する",
+    "codes": [
+      {
+        "code": `
+module.exports = {
+  entry: './src/js/app.js',
+}`,
+        "lang": "js",
+        "file": "webpack.config.js",
+        "page": 172
+      }
+
+    ]
+  },
+  {
+    "section_no": 36,
+    "section_title": "プラグインのインストール",
+    "codes": [
+      {
+        "code": `module.exports = {
+  entry: './src/js/main.js',
+  module: {} // 追記
+}`,
+        "lang": "js",
+        "file": "webpack.config.js",
+        "page": 176
+      },
+      {
+        "code": `module.exports = {
+  entry: './src/js/main.js',
+  module: {
+    rules: [] // 追記
+  }
+}`,
+        "lang": "js",
+        "file": "webpack.config.js",
+        "page": 176
+      },
+      {
+        "code": `module.exports = {
+  entry: './src/js/main.js',
+  output: {
+    filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {                     // 追記
+        test: /\.js$/,       //
+        use: 'babel-loader' //
+      }                     //
+    ]
+  }
+}`,
+        "lang": "js",
+        "file": "webpack.config.js",
+        "page": 177
+      },
+      {
+        "code": `module.exports = {
+  entry: './src/js/main.js',
+  output: {
+    filename: './dist/bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      }
+    ]
+  }
+}`,
+        "lang": "js",
+        "file": "webpack.config.js",
+        "page": 179
+      },
+      {
+        "code": `const babel = () => {
+  console.log('hello world')
+}
+
+babel()`,
+        "lang": "js",
+        "file": "main.js",
+        "page": 180
+      }
+
+    ]
+  },
+  {
+    "section_no": 37,
+    "section_title": "ライブラリの管理",
+    "codes": [
+      {
+        "code": `import $ from 'jquery'
+  $('button').on('click', () => {
+  window.alert('hello webpack')
+})`,
+        "lang": "js",
+        "file": "main.js",
+        "page": 183
+      }
+
+    ]
+  },
+  {
+    "section_no": 37,
+    "section_title": "ライブラリの管理",
+    "codes": [
+      {
+        "code": `import $ from 'jquery'
+import 'slick-carousel'
+import '../../node_modules/slick-carousel/slick/slick.css'
+import '../../node_modules/slick-carousel/slick/slick-theme.css'`,
+        "lang": "js",
+        "file": "main.js",
+        "page": 186
+      },
+      {
+        "code": `module.exports = {
+  entry: './src/js/app.js',
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      },
+      {
+        test: /\.css$/,
+        use: ['css-loader']
+      }
+    ]
+  }
+}`,
+        "lang": "js",
+        "file": "webpack.config.js",
+        "page": 187
+      },
+      {
+        "code": `module.exports = {
+  entry: './src/js/main.js',
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.gif|png|jpg|eot|wof|woff|ttf|svg$/,
+        use: ['url-loader']
+      }
+    ]
+  }
+}`,
+        "lang": "js",
+        "file": "webpack.config.js",
+        "page": 189
+      },
+      {
+        "code": `module.exports = {
+  entry: './src/js/main.js',
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      },
+      {
+        test: /\.css$/
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.gif|png|jpg|eot|wof|woff|ttf|svg$/,
+        use: ['url-loader']
+      }
+    ]
+  }
+}`,
+        "lang": "js",
+        "file": "webpack.config.js",
+        "page": 191
+      }
+
+    ]
+  },
+
+]
+
+%>
+
+<% include _partial/head.ejs %>
+    <% include _partial/header.ejs %>
+
+      <div class="l-content-wrap">
+        <aside class="l-sidebar">
+          <%- include('./_partial/code-toc.ejs', {data:codeblocks,page:6}) %>
+        </aside>
+        <main class="l-main">
+          <div class="l-main__inner">
+            <% for(section of codeblocks ){%>
+              <section class="l-section" id="<%= section.section_no %>">
+                <h3>SECTION
+                  <%= section.section_no %>
+                    <%= section.section_title %>
+                </h3>
+                <% for(code of section.codes){%>
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      <%= code.page %>ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        <%= code.file %>
+                      </p>
+                      <pre class="line-numbers">
+  <code class="lang-<%= code.lang %>"><%= code.code.trim(/^\s+|\s+$/g,'') %></code></pre>
+                    </div>
+
+                  </article>
+                  <% } %>
+              </section>
+              <% } %>
+          </div>
+        </main>
+      </div>
+
+
+
+
+      <script src="main.js"></script>
+  </body>
+
+  </html>

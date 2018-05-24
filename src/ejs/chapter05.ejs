@@ -1,0 +1,863 @@
+<%
+
+var lt = "<"
+var gt = ">"
+
+var ch05Codes = [
+  {
+    "section_no": 25,
+    "section_title": "gulpによる処理の流れ",
+    "codes": [
+      {
+        "code": `
+const gulp = require('gulp')
+
+gulp.task('sass', () => {
+  gulp.src('./src/sass/common.scss')
+})`,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 106
+      },
+      {
+        "code": `
+const gulp = require('gulp')
+
+gulp.task('sass', () => {
+  console.log(gulp.src('./src/sass/common.scss'))
+})`,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 106
+      },
+      {
+        "code": `
+const gulp = require('gulp')
+const sass = require('gulp-sass')
+
+gulp.task('sass', () => {
+  gulp.src('./src/sass/common.scss')
+  .pipe(sass())
+})`,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 108
+      },
+      {
+        "code": `
+const gulp = require('gulp')
+const sass = require('gulp-sass')
+
+gulp.task('sass', () => {
+  gulp.src('./src/sass/common.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('./dist'))
+}`,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 109
+      },
+      {
+        "code": `
+const gulp = require('gulp')
+const sass = require('gulp-sass')
+
+gulp.task('sass', () => {
+  return gulp.src('./src/sass/common.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('./dist'))
+})`,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 110
+      },
+    ]
+  },
+  {
+    "section_no": 26,
+    "section_title": "gulpによる処理の流れ",
+    "codes": [
+      {
+        "code": `
+const gulp = require('gulp')
+const sass = require('gulp-sass')
+const postcss = require('gulp-postcss')
+
+gulp.task('sass', () => {
+  return gulp.src('./src/scss/common.scss')
+    .pipe(sass())
+    .pipe(postcss())
+    .pipe(gulp.dest('./dist'))
+})`,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 112
+      },
+      {
+        "code": `
+{
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 ChromeAndroid versions",
+    "last 2 iOS versions",
+    "last 2 Edge versions",
+    "ie 11"
+  ],
+  "devDependencies": {
+  // 省略
+  }
+}`,
+        "lang": "json",
+        "file": "package.json",
+        "page": 116
+      },
+      {
+        "code": `
+const gulp = require('gulp')
+const sass = require('gulp-sass')
+const postcss = require('gulp-postcss')
+const autoprefixer = require('autoprefixer')
+const postcssOption = [ autoprefixer ]
+
+gulp.task('sass', () => {
+  return gulp.src('./src/scss/common.scss')
+    .pipe(sass())
+    .pipe(postcss(postcssOption))
+    .pipe(gulp.dest('./dist'))
+})`,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 117
+      },
+      {
+        "code": `
+const gulp = require('gulp')
+const sass = require('gulp-sass')
+const postcss = require('gulp-postcss')
+const autoprefixer = require('autoprefixer')
+const autoprefixerOption = {
+  grid: true
+}
+const postcssOption = [ autoprefixer(autoprefixerOption) ]
+
+gulp.task('sass', () => {
+  return gulp.src('./src/scss/common.scss')
+    .pipe(sass())
+    .pipe(postcss(postcssOption))
+    .pipe(gulp.dest('./dist'))
+})`,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 118
+      },
+      {
+        "code": `
+.sample {
+  display: grid;
+}`,
+        "lang": "scss",
+        "file": "common.scss",
+        "page": 118
+      },
+      {
+        "code": `
+const gulp = require('gulp')
+const sass = require('gulp-sass')
+const postcss = require('gulp-postcss')
+const autoprefixer = require('autoprefixer')
+const flexBugsFixes = require('postcss-flexbugs-fixes')
+
+const autoprefixerOption = {
+  grid: true
+}
+
+const postcssOption = [
+  flexBugsFixes,
+  autoprefixer(autoprefixerOption)
+]
+
+gulp.task('sass', () => {
+  return gulp.src('./src/scss/common.scss')
+    .pipe(sass())
+    .pipe(postcss(postcssOption))
+    .pipe(gulp.dest('./dist'))
+})`,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 120
+      },
+      {
+        "code": `
+.foo {
+  flex: 1;
+}
+.bar {
+  flex: 1 1;
+}
+.foz {
+  flex: 1 1 0;
+}
+.baz {
+  flex: 1 1 0px;
+}
+`,
+        "lang": "scss",
+        "file": "common.scss",
+        "page": 120
+      },
+      {
+        "code": `
+const gulp = require('gulp')
+const sass = require('gulp-sass')
+const postcss = require('gulp-postcss')
+const autoprefixer = require('autoprefixer')
+const flexBugsFixies = require('postcss-flexbugs-fixes')
+const cssWring = require('csswring')
+
+const autoprefixerOption = {
+  grid: true
+}
+
+const postcssOption = [
+  flexBugsFixies,
+  autoprefixer(autoprefixerOption),
+  cssWring
+]
+
+gulp.task('sass', () => {
+  return gulp.src('./src/scss/common.scss')
+    .pipe(sass())
+    .pipe(postcss(postcssOption))
+    .pipe(gulp.dest('./dist'))
+})
+`,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 122
+      },
+      {
+        "code": `
+.foo {
+  flex: 1 1;
+}
+.bar {
+  flex: 1 1;
+}
+.foz {
+  flex: 1 1;
+}
+.baz {
+  flex: 1 1;
+}
+`,
+        "lang": "scss",
+        "file": "common.scss",
+        "page": 122
+      },
+    ]
+  },
+  {
+    "section_no": 27,
+    "section_title": "自動でタスクを実行するようにしよう",
+    "codes": [
+      {
+        "code": `
+（省略）
+
+gulp.task('sass', () => {
+  return gulp.src('./src/sass/common.scss')
+    .pipe(sass())
+    .pipe(postcss( postcssOption))
+    .pipe(gulp.dest('./dist'))
+})
+
+gulp.task('watch', () => {
+  return gulp.watch('./src/sass/**/*.scss', gulp.series('sass'))
+})
+        `,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 125
+      },
+      {
+        "code": `
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>◯◯株式会社</title>
+</head>
+        `,
+        "lang": "markup",
+        "file": "head.ejs",
+        "page": 129
+      },
+      {
+        "code": `
+<!DOCTYPE html>
+<html lang="ja">
+  ${lt}% include('./_partial/head') %${gt}
+  <body>
+
+  </body>
+</html>
+        `,
+        "lang": "markup",
+        "file": "index.ejs",
+        "page": 129
+      },
+      {
+        "code": `
+${lt}%
+  var pageTitle
+%${gt}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${lt}%= pageTitle %${gt} - ◯◯株式会社</title>
+</head>
+        `,
+        "lang": "markup",
+        "file": "index.ejs",
+        "page": 130
+      },
+      {
+        "code": `
+${lt}%
+var pageData = {
+  pageTitle: "お問い合わせ"
+}
+%${gt}
+
+<!DOCTYPE html>
+<html lang="ja">
+  ${lt}%- include('./_partial/head', pageData) %${gt}
+<body>
+
+</body>
+</html>
+        `,
+        "lang": "markup",
+        "file": "index.ejs",
+        "page": 131
+      },
+      {
+        "code": `
+${lt}%
+  var pageTitle
+%${gt}
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  ${lt}% if(pageTitle) {%${gt}
+    ${lt}%= pageTitle %${gt} - ○◯株式会社
+  ${lt}% } else { %${gt}
+    ○◯株式会社
+  ${lt}% } %${gt}
+</title>
+<meta
+name="description"
+content="${lt}%= config.default.description %${gt}"
+>
+<meta
+name="author"
+content="${lt}%= config.default.author %${gt}"
+>
+<meta
+property="og:type"
+content="website"
+>
+<meta
+property="og:site_name"
+content="${lt}%= config.default.title %${gt}"
+>
+<meta
+  property="og:title"
+  content="
+  ${lt}% if (key !== 'index') { %${gt}
+    ${lt}%= pagetitle + ' | ' %${gt}
+  ${lt}% } %${gt}
+  ${lt}%= config.default.title %${gt}"
+>
+<meta
+  property="og:description"
+  content="${lt}%= config.default.description %${gt}"
+>
+<meta
+  property="og:url"
+  content="${lt}%= config.default.publicPath %${gt}"
+>
+<meta
+  property="og:image"
+  content="${lt}%= config.default.publicPath %${gt}/img/facebook.png"
+>
+</head>
+        `,
+        "lang": "markup",
+        "file": "index.ejs",
+        "page": 132
+      },
+      {
+        "code": `
+{
+  "author" : "中村勇希",
+  "title" : "タイトルのサンプルです",
+  "description": "説明文のサンプルです",
+  "public": "http://sample.sample"
+}
+        `,
+        "lang": "json",
+        "file": "config.json",
+        "page": 135
+      },
+      {
+        "code": `
+const gulp = require('gulp')
+const ejs = require("gulp-ejs")
+
+// ejsのコンパイル設定用のオブジェクト
+const ejsSettingOption = {
+  ext: '.html'
+}
+
+// ejsをコンパイルするタスク
+gulp.task('ejs', () => {
+  return gulp
+    .src('./src/html/*.ejs')
+    .pipe(ejs({}, {}, ejsSettingOption))
+    .pipe(gulp.dest('./dist'))
+})
+        `,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 134
+      },
+      {
+        "code": `
+const fs = require('fs')
+const gulp = require('gulp')
+const ejs = require("gulp-ejs")
+const configJsonData = fs.readFileSync('./src/ejs/config.json')
+const configObj = JSON.parse(configJsonData)
+
+// ejsのデータ読み込み設定
+const ejsDataOption = {
+  config: configObj
+}
+
+// ejsのコンパイル設定用のオブジェクト
+const ejsSettingOption = {
+  ext: '.html'
+}
+
+// ejsをコンパイルするタスク
+gulp.task('ejs', () => {
+  return gulp
+    .src('./src/html/*.ejs')
+    .pipe(ejs(ejsDataOption, {}, ejsSettingOption))
+    .pipe(gulp.dest('./dist'))
+})
+        `,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 136
+      },
+      {
+        "code": `
+const fs = require('fs')
+const gulp = require('gulp')
+const ejs = require('gulp-ejs')
+const htmlmin = require('gulp-htmlmin')
+
+// JSONファイルの読み込みと変換
+const configJsonData = fs.readFileSync('./src/html/config.json')
+const configObj = JSON.parse(configJsonData)
+
+// ejsのデータ読み込み設定
+const ejsDataOption = {
+  config: configObj
+}
+
+// ejsのデータ読み込み設定
+const ejsDataOption = {
+  config: configObj
+}
+
+// ejsのコンパイル設定
+const ejsSettingOption = {
+  ext: '.html'
+}
+
+// htmlminの設定
+const htmlminOption = {
+  collapseWhitespace: true
+}
+
+// ejsのタスク
+gulp.task('ejs', () => {
+  return gulp
+    .src('./src/html/*.ejs')
+    .pipe(ejs(ejsDataOption, {}, ejsSettingOption))
+    .pipe(htmlmin(htmlminOption))
+    .pipe(gulp.dest('./dist'))
+})
+        `,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 139
+      },
+      {
+        "code": `
+gulp.task('watch', () => {
+  gulp.watch('./src/sass/**/*.scss', gulp.series('sass'))
+  gulp.watch('./src/html/**/*.ejs', gulp.series('ejs')
+})
+        `,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 140
+      }
+    ]
+  },
+  {
+    "section_no": 29,
+    "section_title": "gulpによる処理の流れ",
+    "codes": [
+      {
+        "code": `
+const gulp = require('gulp')
+
+gulp.task('sass', () => {
+  gulp.src('./src/sass/common.scss')
+})
+`,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 142
+      },
+      {
+        "code": `
+const gulp = require('gulp')
+const imagemin = require('gulp-imagemin')
+const imageminPngquant = require('imagemin-pngquant')
+
+const imageminOption = [
+  imageminPngquant({ quality: '65-80' }),
+  imagemin.gifsicle(),
+  imagemin.jpegtran(),
+  imagemin.optipng(),
+  imagemin.svgo()
+]
+
+gulp.task('imagemin', () => {
+  return gulp
+    .src('src/images/*')
+    .pipe(imagemin(imageminOption))
+    .pipe(gulp.dest('dist/images'))
+})
+`,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 146
+      },
+      {
+        "code": `
+const gulp = require('gulp')
+const imagemin = require('gulp-imagemin')
+const imageminPngquant = require('imagemin-pngquant')
+const imageminMozjpeg = require('imagemin-mozjpeg')
+
+const imageminOption = [
+  imageminPngquant({ quality: '65-80' }),
+  imageminMozjpeg({ quality: 80 }),
+  imagemin.gifsicle(),
+  imagemin.jpegtran(),
+  imagemin.optipng(),
+  imagemin.svgo()
+]
+
+gulp.task('imagemin', () => {
+  return gulp
+    .src('src/images/*')
+    .pipe(imagemin(imageminOption))
+    .pipe(gulp.dest('dist/images'))
+})
+`,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 147
+      },
+    ]
+  },
+  {
+    "section_no": 30,
+    "section_title": "gulpによる処理の流れ",
+    "codes": [
+      {
+        "code": `
+const gulp = require('gulp')
+
+// ローカルサーバー起動、自動更新用タスク
+gulp.task('browser-sync', () => {})
+`,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 150
+      },
+      {
+        "code": `
+const gulp = require('gulp')
+const browserSync = require('browser-sync').create()
+
+// ローカルサーバー起動、自動更新用タスク
+gulp.task('browser-sync', () => {
+  browserSync.init()
+})
+`,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 150
+      },
+      {
+        "code": `
+const gulp = require('gulp')
+const browserSync = require('browser-sync').create()
+
+const browserSyncOption = {
+  server: './dist'
+}
+
+gulp.task('serve', (done) => {
+  browserSync.init(browserSyncOption)
+  done()
+})
+
+gulp.task('watch', (done) => {
+  const browserReload = (done) => {
+    browserSync.reload()
+    done()
+  }
+
+  gulp.watch('./dist/**/*', browserReload)
+})
+`,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 153
+      },
+      {
+        "code": `
+const gulp = require('gulp')
+const browserSync = require('browser-sync').create()
+
+const browserSyncOption = {
+  server: './dist'
+}
+
+gulp.task('serve', (done) => {
+  browserSync.init(browserSyncOption)
+  done()
+})
+
+gulp.task('watch', (done) => {
+  const browserReload = (done) => {
+    browserSync.reload()
+    done()
+  }
+
+  gulp.watch('./dist/**/*', browserReload)
+})
+
+gulp.task('default', gulp.series('serve', 'watch'))
+`,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 154
+      },
+    ]
+  },
+  {
+    "section_no": 31,
+    "section_title": "FTPアップロードを自動化しよう",
+    "codes": [
+      {
+        "code": `
+const gulp = require('gulp')
+
+gulp.task('ftp', () => { })
+`,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 157
+      },
+      {
+        "code": `
+const gulp = require('gulp')
+const ftp = require('vinyl-ftp')
+
+gulp.task('ftp', () => {
+  const ftpConfig = {
+    host: 'gulp.gulp.jp',
+    user: 'gulp',
+    password: 'gulp',
+  }
+
+const connect = ftp.create(ftpConfig)
+const ftpUploadFiles = './dist/**/*'
+const remoteDistDir = 'public_html'
+
+return gulp.src(ftpUploadFiles)
+  .pipe(connect.dest(remoteDistDir))
+})
+`,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 157
+      },
+      {
+        "code": `
+const gulp = require('gulp')
+const ftp = require('vinyl-ftp')
+const fancyLog = require('fancy-log') // 追記
+
+gulp.task('ftp', () => {
+  const ftpConfig = {
+    host: 'gulp.gulp.jp',
+    user: 'gulp',
+    password: 'gulp',
+    log: fancyLog // 追記
+  }
+
+  const connect = ftp.create(ftpConfig)
+  const ftpUploadFiles = './dist/**/*'
+  const remoteDistDir = 'public_html'
+
+  return gulp.src(ftpUploadFiles)
+    .pipe(connect.dest(remoteDistDir))
+})
+`,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 159
+      },
+      {
+        "code": `
+const gulp = require('gulp')
+const ftp = require('vinyl-ftp')
+const fancyLog = require('fancy-log')
+
+gulp.task('ftp', () => {
+  const ftpConfig = {
+    host: 'gulp.gulp.jp',
+    user: 'gulp',
+    password: 'gulp',
+    log: fancyLog // 追記
+  }
+
+  const connect = ftp.create(ftpConfig)
+  const ftpUploadFiles = './dist/**/*'
+
+  const ftpUploadConfig = { // 追記
+    buffer: false
+  }
+
+  const remoteDistDir = 'public_html'
+
+  return gulp.src(ftpUploadFiles, ftpUploadConfig) // 追記
+    .pipe(connect.dest(remoteDistDir))
+})
+`,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 161
+      },
+      {
+        "code": `
+const gulp = require('gulp')
+const ftp = require('vinyl-ftp')
+const fancyLog = require('fancy-log')
+
+gulp.task('ftp', () => {
+  const ftpConfig = {
+    host: 'gulp.gulp.jp',
+    user: 'gulp',
+    password: 'gulp',
+    log: fancyLog
+  }
+
+  const connect = ftp.create(ftpConfig)
+  const ftpUploadFiles = './dist/**/*'
+
+  const ftpUploadConfig = {
+    buffer: false
+  }
+
+  const remoteDistDir = 'public_html'
+
+  return gulp.src(ftpUploadFiles, ftpUploadConfig)
+    .pipe(connect.newer(remoteDistDir)) // 追記
+    .pipe(connect.dest(remoteDistDir))
+})
+`,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 162
+      },
+    ]
+  }
+]
+
+%>
+<% include _partial/head.ejs %>
+
+    <% include _partial/header.ejs %>
+
+      <div class="l-content-wrap">
+        <div class="l-sidebar">
+          <%- include('./_partial/code-toc.ejs', {data:ch05Codes,page:5}) %>
+        </div>
+        <main class="l-main">
+          <div class="l-main__inner">
+            <h2>
+              CHAPTER5 実践gulp
+            </h2>
+            <% for(section of ch05Codes ){%>
+              <section class="l-section" id="<%= section.section_no %>">
+                <h3>SECTION
+                  <%= section.section_no %>
+                    <%= section.section_title %>
+                </h3>
+                <% for(code of section.codes){%>
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      <%= code.page %>ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        <%= code.file %>
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-<%= code.lang %>"><%= code.code.trim(/^\s+|\s+$/g,'') %></code></pre>
+                    </div>
+
+                  </article>
+                  <% } %>
+              </section>
+              <% } %>
+          </div>
+        </main>
+      </div>
+
+
+
+
+
+      <script src="main.js"></script>
+  </body>
+
+  </html>

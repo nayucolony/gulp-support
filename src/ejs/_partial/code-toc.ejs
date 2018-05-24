@@ -1,0 +1,79 @@
+<%
+  var page
+  var data
+%>
+
+<nav class="c-toc">
+    <ul>
+        <li>
+            <a href="./chapter01.html">CHAPTER 1</a>
+        </li>
+        <li>
+            <a href="./chapter02.html">CHAPTER 2</a>
+        </li>
+        <li>
+            <a href="./chapter03.html">CHAPTER 3</a>
+        </li>
+        <li>
+            <a href="./chapter04.html">CHAPTER 4</a>
+            <% if(page == 4) {%>
+            <ul>
+              <% for (d of data) {%>
+              <li>
+              <a href="#<%= d.section_no %>">
+                SECTION
+                <%= d.section_no %>
+                <%= d.section_title %></a>
+              </li>
+              <% } %>
+              </ul>
+            <% } %>
+        </li>
+        <li>
+            <a href="./chapter05.html">CHAPTER 5</a>
+            <% if(page == 5) {%>
+            <ul>
+              <% for (d of data) {%>
+              <li>
+              <a href="#<%= d.section_no %>">
+                SECTION
+                <%= d.section_no %>
+                <%= d.section_title %></a>
+              </li>
+              <% } %>
+              </ul>
+            <% } %>
+        </li>
+        <li>
+            <a href="./chapter06.html">CHAPTER 6</a>
+            <% if(page == 6) {%>
+            <ul>
+              <% for (d of data) {%>
+              <li>
+              <a href="#<%= d.section_no %>">
+                SECTION
+                <%= d.section_no %>
+                <%= d.section_title %></a>
+              </li>
+              <% } %>
+              </ul>
+            <% } %>
+        </li>
+        <li>
+            <a href="./chapter07.html">CHAPTER 7</a>
+            <% if(page == 7) {%>
+            <ul>
+              <% for (d of data) {%>
+              <li>
+              <a href="#<%= d.section_no %>">
+                SECTION
+                <%= d.section_no %>
+                <%= d.section_title %></a>
+              </li>
+              <% } %>
+              </ul>
+            <% } %>
+        </li>
+
+    </ul>
+</nav>

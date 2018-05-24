@@ -1,0 +1,16 @@
+
+.c-hero {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  &__logo {
+
+    text-align: center;
+  }
+  &__text {
+    margin-top: 1em;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+
+  }
+}

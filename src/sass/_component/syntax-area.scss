@@ -1,0 +1,17 @@
+
+
+.c-syntax-area {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  &__file-name {
+    margin-bottom: 0;
+    background: $red;
+    color: white;
+    padding: .25em .5em;
+    display: inline-block;
+  }
+  .code-toolbar {
+    width: 100%;
+  }
+}

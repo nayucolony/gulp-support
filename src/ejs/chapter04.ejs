@@ -1,0 +1,127 @@
+<%
+
+var lt = "<"
+var gt = ">"
+
+var ch05Codes = [
+  {
+    "section_no": 19,
+    "section_title": "gulpによる処理の流れ",
+    "codes": [
+      {
+        "code": `
+{}
+        `,
+        "lang": "json",
+        "file": "package.json",
+        "page": 88
+      },
+      {
+        "code": `
+{
+  "description": "はじめてのgulp",
+  "repository": "https://github.com/nayucolony/gulp-tutorial.git",
+  "license": "MIT"
+}
+        `,
+        "lang": "json",
+        "file": "package.json",
+        "page": 88
+      },
+    ]
+  },
+  {
+    "section_no": 22,
+    "section_title": "タスクの定義",
+    "codes": [
+      {
+        "code": `
+const gulp = require('gulp')
+        `,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 96
+      },
+      {
+        "code": `
+const gulp = require('gulp')
+
+gulp.task('default', ()=>{})
+        `,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 98
+      },
+    ]
+  },
+  {
+    "section_no": 24,
+    "section_title": "タスクの完了",
+    "codes": [
+      {
+        "code": `
+const gulp = require('gulp')
+
+gulp.task('default', (done)=>{ done() })
+        `,
+        "lang": "js",
+        "file": "gulpfile.js",
+        "page": 101
+      },
+    ]
+  }
+]
+
+%>
+
+
+<% include _partial/head.ejs %>
+    <% include _partial/header.ejs %>
+
+
+      <div class="l-content-wrap">
+        <div class="l-sidebar">
+          <%- include('./_partial/code-toc.ejs', {data:ch05Codes,page:4}) %>
+        </div>
+        <main class="l-main">
+          <div class="l-main__inner">
+            <h2>
+              CHAPTER5 実践gulp
+            </h2>
+            <% for(section of ch05Codes ){%>
+              <section class="l-section" id="<%= section.section_no %>">
+                <h3>SECTION
+                  <%= section.section_no %>
+                    <%= section.section_title %>
+                </h3>
+                <% for(code of section.codes){%>
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      <%= code.page %>ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        <%= code.file %>
+                      </p>
+                      <pre class="line-numbers c-syntax-area__code-block">
+<code class="lang-<%= code.lang %>"><%= code.code.trim(/^\s+|\s+$/g,'') %></code></pre>
+                    </div>
+
+                  </article>
+                  <% } %>
+              </section>
+              <% } %>
+
+          </div>
+
+        </main>
+      </div>
+
+
+
+
+      <script src="main.js"></script>
+  </body>
+
+  </html>
