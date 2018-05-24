@@ -1,0 +1,1237 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+  
+   | Webデザイナーの仕事を楽にする! gulpではじめるWeb制作ワークフロー入門 公式サポートサイト
+  
+
+  </title>
+  <link rel="stylesheet" href="./assets/styles/common.css">
+</head>
+
+<body>
+
+
+    
+
+  <header class="c-header">
+    <div class="c-header__inner">
+      <h1 class="c-header__brand">
+        <a href="/">
+        gulpではじめるWeb制作ワークフロー入門
+        </a>
+      </h1>
+      <nav class="c-global-nav">
+        <ul class="c-global-nav__list">
+          <li>
+            <a href="/">HOME</a>
+          </li>
+          <li>
+            <a href="/chapter01.html">
+              サンプルコード
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+  </header>
+
+
+
+
+      <div class="l-content-wrap">
+        <div class="l-sidebar">
+          
+
+<nav class="c-toc">
+    <ul>
+        <li>
+            <a href="./chapter01.html">CHAPTER 1</a>
+        </li>
+        <li>
+            <a href="./chapter02.html">CHAPTER 2</a>
+        </li>
+        <li>
+            <a href="./chapter03.html">CHAPTER 3</a>
+        </li>
+        <li>
+            <a href="./chapter04.html">CHAPTER 4</a>
+            
+        </li>
+        <li>
+            <a href="./chapter05.html">CHAPTER 5</a>
+            
+            <ul>
+              
+              <li>
+              <a href="#25">
+                SECTION
+                25
+                gulpによる処理の流れ</a>
+              </li>
+              
+              <li>
+              <a href="#26">
+                SECTION
+                26
+                gulpによる処理の流れ</a>
+              </li>
+              
+              <li>
+              <a href="#27">
+                SECTION
+                27
+                自動でタスクを実行するようにしよう</a>
+              </li>
+              
+              <li>
+              <a href="#29">
+                SECTION
+                29
+                gulpによる処理の流れ</a>
+              </li>
+              
+              <li>
+              <a href="#30">
+                SECTION
+                30
+                gulpによる処理の流れ</a>
+              </li>
+              
+              <li>
+              <a href="#31">
+                SECTION
+                31
+                FTPアップロードを自動化しよう</a>
+              </li>
+              
+              </ul>
+            
+        </li>
+        <li>
+            <a href="./chapter06.html">CHAPTER 6</a>
+            
+        </li>
+        <li>
+            <a href="./chapter07.html">CHAPTER 7</a>
+            
+        </li>
+
+    </ul>
+</nav>
+
+        </div>
+        <main class="l-main">
+          <div class="l-main__inner">
+            <h2>
+              CHAPTER5 実践gulp
+            </h2>
+            
+              <section class="l-section" id="25">
+                <h3>SECTION
+                  25
+                    gulpによる処理の流れ
+                </h3>
+                
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      106ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const gulp = require(&#39;gulp&#39;)
+
+gulp.task(&#39;sass&#39;, () =&gt; {
+  gulp.src(&#39;./src/sass/common.scss&#39;)
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      106ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const gulp = require(&#39;gulp&#39;)
+
+gulp.task(&#39;sass&#39;, () =&gt; {
+  console.log(gulp.src(&#39;./src/sass/common.scss&#39;))
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      108ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const gulp = require(&#39;gulp&#39;)
+const sass = require(&#39;gulp-sass&#39;)
+
+gulp.task(&#39;sass&#39;, () =&gt; {
+  gulp.src(&#39;./src/sass/common.scss&#39;)
+  .pipe(sass())
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      109ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const gulp = require(&#39;gulp&#39;)
+const sass = require(&#39;gulp-sass&#39;)
+
+gulp.task(&#39;sass&#39;, () =&gt; {
+  gulp.src(&#39;./src/sass/common.scss&#39;)
+    .pipe(sass())
+    .pipe(gulp.dest(&#39;./dist&#39;))
+}</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      110ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const gulp = require(&#39;gulp&#39;)
+const sass = require(&#39;gulp-sass&#39;)
+
+gulp.task(&#39;sass&#39;, () =&gt; {
+  return gulp.src(&#39;./src/sass/common.scss&#39;)
+    .pipe(sass())
+    .pipe(gulp.dest(&#39;./dist&#39;))
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+              </section>
+              
+              <section class="l-section" id="26">
+                <h3>SECTION
+                  26
+                    gulpによる処理の流れ
+                </h3>
+                
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      112ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const gulp = require(&#39;gulp&#39;)
+const sass = require(&#39;gulp-sass&#39;)
+const postcss = require(&#39;gulp-postcss&#39;)
+
+gulp.task(&#39;sass&#39;, () =&gt; {
+  return gulp.src(&#39;./src/scss/common.scss&#39;)
+    .pipe(sass())
+    .pipe(postcss())
+    .pipe(gulp.dest(&#39;./dist&#39;))
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      116ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        package.json
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-json">{
+  &#34;browserslist&#34;: [
+    &#34;last 2 Chrome versions&#34;,
+    &#34;last 2 Firefox versions&#34;,
+    &#34;last 2 Safari versions&#34;,
+    &#34;last 2 ChromeAndroid versions&#34;,
+    &#34;last 2 iOS versions&#34;,
+    &#34;last 2 Edge versions&#34;,
+    &#34;ie 11&#34;
+  ],
+  &#34;devDependencies&#34;: {
+  // 省略
+  }
+}</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      117ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const gulp = require(&#39;gulp&#39;)
+const sass = require(&#39;gulp-sass&#39;)
+const postcss = require(&#39;gulp-postcss&#39;)
+const autoprefixer = require(&#39;autoprefixer&#39;)
+const postcssOption = [ autoprefixer ]
+
+gulp.task(&#39;sass&#39;, () =&gt; {
+  return gulp.src(&#39;./src/scss/common.scss&#39;)
+    .pipe(sass())
+    .pipe(postcss(postcssOption))
+    .pipe(gulp.dest(&#39;./dist&#39;))
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      118ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const gulp = require(&#39;gulp&#39;)
+const sass = require(&#39;gulp-sass&#39;)
+const postcss = require(&#39;gulp-postcss&#39;)
+const autoprefixer = require(&#39;autoprefixer&#39;)
+const autoprefixerOption = {
+  grid: true
+}
+const postcssOption = [ autoprefixer(autoprefixerOption) ]
+
+gulp.task(&#39;sass&#39;, () =&gt; {
+  return gulp.src(&#39;./src/scss/common.scss&#39;)
+    .pipe(sass())
+    .pipe(postcss(postcssOption))
+    .pipe(gulp.dest(&#39;./dist&#39;))
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      118ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        common.scss
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-scss">.sample {
+  display: grid;
+}</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      120ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const gulp = require(&#39;gulp&#39;)
+const sass = require(&#39;gulp-sass&#39;)
+const postcss = require(&#39;gulp-postcss&#39;)
+const autoprefixer = require(&#39;autoprefixer&#39;)
+const flexBugsFixes = require(&#39;postcss-flexbugs-fixes&#39;)
+
+const autoprefixerOption = {
+  grid: true
+}
+
+const postcssOption = [
+  flexBugsFixes,
+  autoprefixer(autoprefixerOption)
+]
+
+gulp.task(&#39;sass&#39;, () =&gt; {
+  return gulp.src(&#39;./src/scss/common.scss&#39;)
+    .pipe(sass())
+    .pipe(postcss(postcssOption))
+    .pipe(gulp.dest(&#39;./dist&#39;))
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      120ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        common.scss
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-scss">.foo {
+  flex: 1;
+}
+.bar {
+  flex: 1 1;
+}
+.foz {
+  flex: 1 1 0;
+}
+.baz {
+  flex: 1 1 0px;
+}</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      122ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const gulp = require(&#39;gulp&#39;)
+const sass = require(&#39;gulp-sass&#39;)
+const postcss = require(&#39;gulp-postcss&#39;)
+const autoprefixer = require(&#39;autoprefixer&#39;)
+const flexBugsFixies = require(&#39;postcss-flexbugs-fixes&#39;)
+const cssWring = require(&#39;csswring&#39;)
+
+const autoprefixerOption = {
+  grid: true
+}
+
+const postcssOption = [
+  flexBugsFixies,
+  autoprefixer(autoprefixerOption),
+  cssWring
+]
+
+gulp.task(&#39;sass&#39;, () =&gt; {
+  return gulp.src(&#39;./src/scss/common.scss&#39;)
+    .pipe(sass())
+    .pipe(postcss(postcssOption))
+    .pipe(gulp.dest(&#39;./dist&#39;))
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      122ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        common.scss
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-scss">.foo {
+  flex: 1 1;
+}
+.bar {
+  flex: 1 1;
+}
+.foz {
+  flex: 1 1;
+}
+.baz {
+  flex: 1 1;
+}</code></pre>
+                    </div>
+
+                  </article>
+                  
+              </section>
+              
+              <section class="l-section" id="27">
+                <h3>SECTION
+                  27
+                    自動でタスクを実行するようにしよう
+                </h3>
+                
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      125ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">（省略）
+
+gulp.task(&#39;sass&#39;, () =&gt; {
+  return gulp.src(&#39;./src/sass/common.scss&#39;)
+    .pipe(sass())
+    .pipe(postcss( postcssOption))
+    .pipe(gulp.dest(&#39;./dist&#39;))
+})
+
+gulp.task(&#39;watch&#39;, () =&gt; {
+  return gulp.watch(&#39;./src/sass/**/*.scss&#39;, gulp.series(&#39;sass&#39;))
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      129ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        head.ejs
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-markup">&lt;head&gt;
+  &lt;meta charset=&#34;UTF-8&#34;&gt;
+  &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt;
+  &lt;title&gt;◯◯株式会社&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      129ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        index.ejs
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang=&#34;ja&#34;&gt;
+  &lt;% include(&#39;./_partial/head&#39;) %&gt;
+  &lt;body&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      130ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        index.ejs
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-markup">&lt;%
+  var pageTitle
+%&gt;
+
+&lt;head&gt;
+  &lt;meta charset=&#34;UTF-8&#34;&gt;
+  &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt;
+  &lt;title&gt;&lt;%= pageTitle %&gt; - ◯◯株式会社&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      131ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        index.ejs
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-markup">&lt;%
+var pageData = {
+  pageTitle: &#34;お問い合わせ&#34;
+}
+%&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&#34;ja&#34;&gt;
+  &lt;%- include(&#39;./_partial/head&#39;, pageData) %&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      132ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        index.ejs
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-markup">&lt;%
+  var pageTitle
+%&gt;
+
+&lt;head&gt;
+&lt;meta charset=&#34;UTF-8&#34;&gt;
+&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt;
+&lt;title&gt;
+  &lt;% if(pageTitle) {%&gt;
+    &lt;%= pageTitle %&gt; - ○◯株式会社
+  &lt;% } else { %&gt;
+    ○◯株式会社
+  &lt;% } %&gt;
+&lt;/title&gt;
+&lt;meta
+name=&#34;description&#34;
+content=&#34;&lt;%= config.default.description %&gt;&#34;
+&gt;
+&lt;meta
+name=&#34;author&#34;
+content=&#34;&lt;%= config.default.author %&gt;&#34;
+&gt;
+&lt;meta
+property=&#34;og:type&#34;
+content=&#34;website&#34;
+&gt;
+&lt;meta
+property=&#34;og:site_name&#34;
+content=&#34;&lt;%= config.default.title %&gt;&#34;
+&gt;
+&lt;meta
+  property=&#34;og:title&#34;
+  content=&#34;
+  &lt;% if (key !== &#39;index&#39;) { %&gt;
+    &lt;%= pagetitle + &#39; | &#39; %&gt;
+  &lt;% } %&gt;
+  &lt;%= config.default.title %&gt;&#34;
+&gt;
+&lt;meta
+  property=&#34;og:description&#34;
+  content=&#34;&lt;%= config.default.description %&gt;&#34;
+&gt;
+&lt;meta
+  property=&#34;og:url&#34;
+  content=&#34;&lt;%= config.default.publicPath %&gt;&#34;
+&gt;
+&lt;meta
+  property=&#34;og:image&#34;
+  content=&#34;&lt;%= config.default.publicPath %&gt;/img/facebook.png&#34;
+&gt;
+&lt;/head&gt;</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      135ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        config.json
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-json">{
+  &#34;author&#34; : &#34;中村勇希&#34;,
+  &#34;title&#34; : &#34;タイトルのサンプルです&#34;,
+  &#34;description&#34;: &#34;説明文のサンプルです&#34;,
+  &#34;public&#34;: &#34;http://sample.sample&#34;
+}</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      134ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const gulp = require(&#39;gulp&#39;)
+const ejs = require(&#34;gulp-ejs&#34;)
+
+// ejsのコンパイル設定用のオブジェクト
+const ejsSettingOption = {
+  ext: &#39;.html&#39;
+}
+
+// ejsをコンパイルするタスク
+gulp.task(&#39;ejs&#39;, () =&gt; {
+  return gulp
+    .src(&#39;./src/html/*.ejs&#39;)
+    .pipe(ejs({}, {}, ejsSettingOption))
+    .pipe(gulp.dest(&#39;./dist&#39;))
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      136ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const fs = require(&#39;fs&#39;)
+const gulp = require(&#39;gulp&#39;)
+const ejs = require(&#34;gulp-ejs&#34;)
+const configJsonData = fs.readFileSync(&#39;./src/ejs/config.json&#39;)
+const configObj = JSON.parse(configJsonData)
+
+// ejsのデータ読み込み設定
+const ejsDataOption = {
+  config: configObj
+}
+
+// ejsのコンパイル設定用のオブジェクト
+const ejsSettingOption = {
+  ext: &#39;.html&#39;
+}
+
+// ejsをコンパイルするタスク
+gulp.task(&#39;ejs&#39;, () =&gt; {
+  return gulp
+    .src(&#39;./src/html/*.ejs&#39;)
+    .pipe(ejs(ejsDataOption, {}, ejsSettingOption))
+    .pipe(gulp.dest(&#39;./dist&#39;))
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      139ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const fs = require(&#39;fs&#39;)
+const gulp = require(&#39;gulp&#39;)
+const ejs = require(&#39;gulp-ejs&#39;)
+const htmlmin = require(&#39;gulp-htmlmin&#39;)
+
+// JSONファイルの読み込みと変換
+const configJsonData = fs.readFileSync(&#39;./src/html/config.json&#39;)
+const configObj = JSON.parse(configJsonData)
+
+// ejsのデータ読み込み設定
+const ejsDataOption = {
+  config: configObj
+}
+
+// ejsのデータ読み込み設定
+const ejsDataOption = {
+  config: configObj
+}
+
+// ejsのコンパイル設定
+const ejsSettingOption = {
+  ext: &#39;.html&#39;
+}
+
+// htmlminの設定
+const htmlminOption = {
+  collapseWhitespace: true
+}
+
+// ejsのタスク
+gulp.task(&#39;ejs&#39;, () =&gt; {
+  return gulp
+    .src(&#39;./src/html/*.ejs&#39;)
+    .pipe(ejs(ejsDataOption, {}, ejsSettingOption))
+    .pipe(htmlmin(htmlminOption))
+    .pipe(gulp.dest(&#39;./dist&#39;))
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      140ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">gulp.task(&#39;watch&#39;, () =&gt; {
+  gulp.watch(&#39;./src/sass/**/*.scss&#39;, gulp.series(&#39;sass&#39;))
+  gulp.watch(&#39;./src/html/**/*.ejs&#39;, gulp.series(&#39;ejs&#39;)
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+              </section>
+              
+              <section class="l-section" id="29">
+                <h3>SECTION
+                  29
+                    gulpによる処理の流れ
+                </h3>
+                
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      142ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const gulp = require(&#39;gulp&#39;)
+
+gulp.task(&#39;sass&#39;, () =&gt; {
+  gulp.src(&#39;./src/sass/common.scss&#39;)
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      146ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const gulp = require(&#39;gulp&#39;)
+const imagemin = require(&#39;gulp-imagemin&#39;)
+const imageminPngquant = require(&#39;imagemin-pngquant&#39;)
+
+const imageminOption = [
+  imageminPngquant({ quality: &#39;65-80&#39; }),
+  imagemin.gifsicle(),
+  imagemin.jpegtran(),
+  imagemin.optipng(),
+  imagemin.svgo()
+]
+
+gulp.task(&#39;imagemin&#39;, () =&gt; {
+  return gulp
+    .src(&#39;src/images/*&#39;)
+    .pipe(imagemin(imageminOption))
+    .pipe(gulp.dest(&#39;dist/images&#39;))
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      147ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const gulp = require(&#39;gulp&#39;)
+const imagemin = require(&#39;gulp-imagemin&#39;)
+const imageminPngquant = require(&#39;imagemin-pngquant&#39;)
+const imageminMozjpeg = require(&#39;imagemin-mozjpeg&#39;)
+
+const imageminOption = [
+  imageminPngquant({ quality: &#39;65-80&#39; }),
+  imageminMozjpeg({ quality: 80 }),
+  imagemin.gifsicle(),
+  imagemin.jpegtran(),
+  imagemin.optipng(),
+  imagemin.svgo()
+]
+
+gulp.task(&#39;imagemin&#39;, () =&gt; {
+  return gulp
+    .src(&#39;src/images/*&#39;)
+    .pipe(imagemin(imageminOption))
+    .pipe(gulp.dest(&#39;dist/images&#39;))
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+              </section>
+              
+              <section class="l-section" id="30">
+                <h3>SECTION
+                  30
+                    gulpによる処理の流れ
+                </h3>
+                
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      150ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const gulp = require(&#39;gulp&#39;)
+
+// ローカルサーバー起動、自動更新用タスク
+gulp.task(&#39;browser-sync&#39;, () =&gt; {})</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      150ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const gulp = require(&#39;gulp&#39;)
+const browserSync = require(&#39;browser-sync&#39;).create()
+
+// ローカルサーバー起動、自動更新用タスク
+gulp.task(&#39;browser-sync&#39;, () =&gt; {
+  browserSync.init()
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      153ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const gulp = require(&#39;gulp&#39;)
+const browserSync = require(&#39;browser-sync&#39;).create()
+
+const browserSyncOption = {
+  server: &#39;./dist&#39;
+}
+
+gulp.task(&#39;serve&#39;, (done) =&gt; {
+  browserSync.init(browserSyncOption)
+  done()
+})
+
+gulp.task(&#39;watch&#39;, (done) =&gt; {
+  const browserReload = (done) =&gt; {
+    browserSync.reload()
+    done()
+  }
+
+  gulp.watch(&#39;./dist/**/*&#39;, browserReload)
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      154ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const gulp = require(&#39;gulp&#39;)
+const browserSync = require(&#39;browser-sync&#39;).create()
+
+const browserSyncOption = {
+  server: &#39;./dist&#39;
+}
+
+gulp.task(&#39;serve&#39;, (done) =&gt; {
+  browserSync.init(browserSyncOption)
+  done()
+})
+
+gulp.task(&#39;watch&#39;, (done) =&gt; {
+  const browserReload = (done) =&gt; {
+    browserSync.reload()
+    done()
+  }
+
+  gulp.watch(&#39;./dist/**/*&#39;, browserReload)
+})
+
+gulp.task(&#39;default&#39;, gulp.series(&#39;serve&#39;, &#39;watch&#39;))</code></pre>
+                    </div>
+
+                  </article>
+                  
+              </section>
+              
+              <section class="l-section" id="31">
+                <h3>SECTION
+                  31
+                    FTPアップロードを自動化しよう
+                </h3>
+                
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      157ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const gulp = require(&#39;gulp&#39;)
+
+gulp.task(&#39;ftp&#39;, () =&gt; { })</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      157ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const gulp = require(&#39;gulp&#39;)
+const ftp = require(&#39;vinyl-ftp&#39;)
+
+gulp.task(&#39;ftp&#39;, () =&gt; {
+  const ftpConfig = {
+    host: &#39;gulp.gulp.jp&#39;,
+    user: &#39;gulp&#39;,
+    password: &#39;gulp&#39;,
+  }
+
+const connect = ftp.create(ftpConfig)
+const ftpUploadFiles = &#39;./dist/**/*&#39;
+const remoteDistDir = &#39;public_html&#39;
+
+return gulp.src(ftpUploadFiles)
+  .pipe(connect.dest(remoteDistDir))
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      159ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const gulp = require(&#39;gulp&#39;)
+const ftp = require(&#39;vinyl-ftp&#39;)
+const fancyLog = require(&#39;fancy-log&#39;) // 追記
+
+gulp.task(&#39;ftp&#39;, () =&gt; {
+  const ftpConfig = {
+    host: &#39;gulp.gulp.jp&#39;,
+    user: &#39;gulp&#39;,
+    password: &#39;gulp&#39;,
+    log: fancyLog // 追記
+  }
+
+  const connect = ftp.create(ftpConfig)
+  const ftpUploadFiles = &#39;./dist/**/*&#39;
+  const remoteDistDir = &#39;public_html&#39;
+
+  return gulp.src(ftpUploadFiles)
+    .pipe(connect.dest(remoteDistDir))
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      161ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const gulp = require(&#39;gulp&#39;)
+const ftp = require(&#39;vinyl-ftp&#39;)
+const fancyLog = require(&#39;fancy-log&#39;)
+
+gulp.task(&#39;ftp&#39;, () =&gt; {
+  const ftpConfig = {
+    host: &#39;gulp.gulp.jp&#39;,
+    user: &#39;gulp&#39;,
+    password: &#39;gulp&#39;,
+    log: fancyLog // 追記
+  }
+
+  const connect = ftp.create(ftpConfig)
+  const ftpUploadFiles = &#39;./dist/**/*&#39;
+
+  const ftpUploadConfig = { // 追記
+    buffer: false
+  }
+
+  const remoteDistDir = &#39;public_html&#39;
+
+  return gulp.src(ftpUploadFiles, ftpUploadConfig) // 追記
+    .pipe(connect.dest(remoteDistDir))
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+                  <article class="p-code-chank">
+                    <p>
+                      📖
+                      162ページ
+                    </p>
+                    <div class="c-syntax-area">
+                      <p class="c-syntax-area__file-name">
+                        gulpfile.js
+                      </p>
+                      <pre class="line-numbers">
+<code class="lang-js">const gulp = require(&#39;gulp&#39;)
+const ftp = require(&#39;vinyl-ftp&#39;)
+const fancyLog = require(&#39;fancy-log&#39;)
+
+gulp.task(&#39;ftp&#39;, () =&gt; {
+  const ftpConfig = {
+    host: &#39;gulp.gulp.jp&#39;,
+    user: &#39;gulp&#39;,
+    password: &#39;gulp&#39;,
+    log: fancyLog
+  }
+
+  const connect = ftp.create(ftpConfig)
+  const ftpUploadFiles = &#39;./dist/**/*&#39;
+
+  const ftpUploadConfig = {
+    buffer: false
+  }
+
+  const remoteDistDir = &#39;public_html&#39;
+
+  return gulp.src(ftpUploadFiles, ftpUploadConfig)
+    .pipe(connect.newer(remoteDistDir)) // 追記
+    .pipe(connect.dest(remoteDistDir))
+})</code></pre>
+                    </div>
+
+                  </article>
+                  
+              </section>
+              
+          </div>
+        </main>
+      </div>
+
+
+
+
+
+      <script src="main.js"></script>
+  </body>
+
+  </html>
