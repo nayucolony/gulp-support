@@ -4429,24 +4429,28 @@ a.text-dark:hover, a.text-dark:focus {
   grid-gap: 1.5rem;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem; }
-
-.p-bookinfo__visual {
-  -ms-grid-row: 1;
-  grid-row: 1; }
-  .p-bookinfo__visual figure {
-    display: flex;
-    align-items: flex-start;
-    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25); }
-  .p-bookinfo__visual img {
-    width: 100%;
-    height: auto; }
-
-.p-bookinfo__data {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2 / 3;
-  -ms-grid-row: 1;
-  grid-row: 1; }
+  .p-bookinfo__visual {
+    -ms-grid-row: 1;
+    grid-row: 1; }
+    .p-bookinfo__visual figure {
+      display: flex;
+      align-items: flex-start;
+      box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25); }
+    .p-bookinfo__visual img {
+      width: 100%;
+      height: auto; }
+  .p-bookinfo__data {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+    -ms-grid-row: 1;
+    grid-row: 1; }
+  .p-bookinfo__detail-row {
+    display: flex; }
+  .p-bookinfo__pubdate {
+    font-size: 1.5rem; }
+  .p-bookinfo dt {
+    margin-right: 0.75em; }
 
 .p-code-chank:not(:last-child) {
   margin-bottom: 1.5rem; }
@@ -4536,7 +4540,15 @@ a.text-dark:hover, a.text-dark:focus {
 .c-copyright {
   text-align: center; }
 
-h2 {
+.c-purchase-link {
+  color: #cf4647;
+  padding: .75em;
+  font-size: 1.25rem;
+  border-width: 1px;
+  border-style: solid; }
+
+h2,
+h3 {
   font-weight: bold; }
 
 @media (min-width: 576px) {

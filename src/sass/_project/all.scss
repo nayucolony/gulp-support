@@ -9,25 +9,37 @@
   grid-gap: 1.5rem;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
+  &__visual {
+    grid-row: 1;
+    figure {
+      display: flex;
+      align-items: flex-start;
+      box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 
-.p-bookinfo__visual {
-  grid-row: 1;
-  figure {
+  &__data {
+    grid-column: 2 / 3;
+    grid-row: 1;
+  }
+
+  &__detail-row {
     display: flex;
-    align-items: flex-start;
-    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
   }
-  img {
-    width: 100%;
-    height: auto;
+
+  &__pubdate {
+    font-size: 1.5rem;
+  }
+
+  dt {
+    margin-right: 0.75em;
   }
 }
 
-.p-bookinfo__data {
-  grid-column: 2 / 3;
-  grid-row: 1;
-}
 
 
 .p-code-chank {
