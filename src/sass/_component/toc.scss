@@ -8,11 +8,24 @@
 
   }
   li {
+    &::before {
+      content: "📕";
+      display: inline;
+    }
     &:not(:last-child) {
       margin-bottom: .5em;
     }
     > ul {
       margin-top: 0.25em;
+      li {
+        &::before {
+          content: "📗";
+          display: inline;
+        }
+      }
     }
+  }
+  a {
+    color: inherit;
   }
 }

@@ -5,6 +5,10 @@ module.exports = {
     "picturefill",
     "./src/js/main.js"
   ],
+  output: {
+    path: path.resolve(__dirname, 'docs'),
+    filename: "main.js"
+  },
   module: {
     rules: [
       {

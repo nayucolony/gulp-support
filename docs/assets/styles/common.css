@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
  * Bootstrap v4.1.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -4378,7 +4379,7 @@ a.text-dark:hover, a.text-dark:focus {
   padding-right: 1.5rem; }
 
 .l-footer {
-  margin-top: 100rem;
+  margin-top: 6rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
   background: #cf4647;
@@ -4403,7 +4404,7 @@ a.text-dark:hover, a.text-dark:focus {
   padding-bottom: 1.5rem; }
 
 .l-container {
-  width: 1100px;
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto; }
 
@@ -4458,10 +4459,18 @@ a.text-dark:hover, a.text-dark:focus {
     list-style-type: none;
     font-size: 1rem;
     padding-left: 1.5rem; }
+  .c-toc li::before {
+    content: "📕";
+    display: inline; }
   .c-toc li:not(:last-child) {
     margin-bottom: .5em; }
   .c-toc li > ul {
     margin-top: 0.25em; }
+    .c-toc li > ul li::before {
+      content: "📗";
+      display: inline; }
+  .c-toc a {
+    color: inherit; }
 
 .c-syntax-area {
   display: flex;
