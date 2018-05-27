@@ -10,7 +10,8 @@
     "build": "run-p dev:ejs js:build",
     "js:dev": "webpack --mode development -w",
     "js:build": "webpack --mode production",
-    "ftp": "gulp ftp"
+    "ftp": "gulp ftp",
+    "lint": "ejslint src/ejs/*.ejs"
   },
   "browserslist": [
     "last 2 Chrome versions",
@@ -23,15 +24,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/to-r/girls_symphony.git"
+    "url": "git+https://github.com/nayucolony/gulp-support"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/to-r/girls_symphony/issues"
+    "url": "https://github.com/nayucolony/gulp-support/issues"
   },
-  "homepage": "https://github.com/to-r/girls_symphony#readme",
+  "homepage": "https://github.com/nayucolony/gulp-support#readme",
   "dependencies": {
     "bootstrap": "^4.1.1",
     "bulma": "^0.7.1",
@@ -50,6 +51,7 @@
     "browser-sync": "^2.18.13",
     "css-loader": "^0.28.11",
     "css-mqpacker": "^6.0.1",
+    "ejs-lint": "^0.3.0",
     "gulp": "^4.0.0",
     "gulp-changed": "^3.1.1",
     "gulp-data": "^1.2.1",
