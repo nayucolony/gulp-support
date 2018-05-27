@@ -4458,7 +4458,7 @@ a.text-dark:hover, a.text-dark:focus {
 .c-toc {
   position: -webkit-sticky;
   position: sticky;
-  top: 0; }
+  top: 1.5rem; }
   .c-toc ul {
     list-style-type: none;
     font-size: 1rem;
