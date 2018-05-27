@@ -1,4 +1,10 @@
-<% include _partial/head.ejs %>
+<%
+
+var pageTitle = "サンプルコード CHAPTER02"
+
+%>
+
+<%- include('_partial/head.ejs',{pageTitle:pageTitle}) %>
 
   <% include _partial/header.ejs %>
       <div class="l-content-wrap">

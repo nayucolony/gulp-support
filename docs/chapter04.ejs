@@ -3,9 +3,6 @@
 var lt = "<"
 var gt = ">"
 
-var pageTitle = "サンプルコード CHAPTER04"
-
-
 var ch05Codes = [
   {
     "section_no": 19,
@@ -78,7 +75,7 @@ gulp.task('default', (done)=>{ done() })
 %>
 
 
-<%- include('_partial/head.ejs',{pageTitle:pageTitle}) %>
+<% include _partial/head.ejs %>
     <% include _partial/header.ejs %>
 
 

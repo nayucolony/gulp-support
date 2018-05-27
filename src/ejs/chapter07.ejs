@@ -1,4 +1,5 @@
 <%
+var pageTitle = "サンプルコード CHAPTER07"
 
 var codeblocks = [
   {
@@ -147,7 +148,7 @@ module.exports = {
 
 %>
 
-<% include _partial/head.ejs %>
+<%- include('_partial/head.ejs',{pageTitle:pageTitle}) %>
     <% include _partial/header.ejs %>
 
         <div class="l-content-wrap">

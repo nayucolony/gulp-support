@@ -1,4 +1,7 @@
 <%
+
+var pageTitle = "参考リンク"
+
 var links = [
   {
     'chapter_no': "CHAPTER01",
@@ -384,8 +387,7 @@ var links = [
 var test = "test";
 
 %>
-
-  <% include _partial/head.ejs %>
+<%- include('_partial/head.ejs',{pageTitle:pageTitle}) %>
     <% include _partial/header.ejs %>
 
         <div class="l-content-wrap">
