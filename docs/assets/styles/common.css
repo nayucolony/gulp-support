@@ -4494,6 +4494,9 @@ a.text-dark:hover, a.text-dark:focus {
   padding-bottom: 3rem; }
   .c-hero__logo {
     text-align: center; }
+    .c-hero__logo img {
+      width: 100%;
+      height: auto; }
   .c-hero__text {
     margin-top: 1em;
     text-align: center;
@@ -4531,6 +4534,9 @@ a.text-dark:hover, a.text-dark:focus {
   padding-bottom: 3rem; }
   .c-hero__logo {
     text-align: center; }
+    .c-hero__logo img {
+      width: 100%;
+      height: auto; }
   .c-hero__text {
     margin-top: 1em;
     text-align: center;
