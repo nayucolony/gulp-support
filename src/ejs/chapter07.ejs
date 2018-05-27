@@ -7,7 +7,6 @@ var codeblocks = [
     "codes": [
       {
         "code": `
-
 root = true
 
 [*]
@@ -20,7 +19,6 @@ trim_trailing_whitespace = true
 
 [*.md]
 trim_trailing_whitespace = false
-
         `,
         "lang": "",
         "file": ".editorconfig",
@@ -175,7 +173,7 @@ module.exports = {
                       <%= code.file %>
                     </p>
                     <pre class="line-numbers">
-  <code class="lang-<%= code.lang %>"><%= code.code.trim(/^\s+|\s+$/g,'') %></code></pre>
+<code class="lang-<%= code.lang %>"><%= code.code.trim(/^\s+|\s+$/g,'') %></code></pre>
                   </div>
 
                 </article>
