@@ -4376,7 +4376,9 @@ a.text-dark:hover, a.text-dark:focus {
 
 .l-sidebar {
   padding-left: 1.5rem;
-  padding-right: 1.5rem; }
+  padding-right: 1.5rem;
+  -ms-grid-row: 1;
+  grid-row: 1; }
 
 .l-footer {
   margin-top: 6rem;
@@ -4417,10 +4419,6 @@ a.text-dark:hover, a.text-dark:focus {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem; }
 
-.l-sidebar {
-  -ms-grid-row: 1;
-  grid-row: 1; }
-
 .p-bookinfo {
   display: -ms-grid;
   display: grid;
@@ -4435,7 +4433,7 @@ a.text-dark:hover, a.text-dark:focus {
     .p-bookinfo__visual figure {
       display: flex;
       align-items: flex-start;
-      box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25); }
+      box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25); }
     .p-bookinfo__visual img {
       width: 100%;
       height: auto; }
@@ -4467,7 +4465,7 @@ a.text-dark:hover, a.text-dark:focus {
     content: "📕";
     display: inline; }
   .c-toc li:not(:last-child) {
-    margin-bottom: .5em; }
+    margin-bottom: 0.5em; }
   .c-toc li > ul {
     margin-top: 0.25em; }
     .c-toc li > ul li::before {
@@ -4484,24 +4482,10 @@ a.text-dark:hover, a.text-dark:focus {
     margin-bottom: 0;
     background: #cf4647;
     color: white;
-    padding: .25em .5em;
+    padding: 0.25em 0.5em;
     display: inline-block; }
   .c-syntax-area .code-toolbar {
     width: 100%; }
-
-.c-hero {
-  padding-top: 3rem;
-  padding-bottom: 3rem; }
-  .c-hero__logo {
-    text-align: center; }
-    .c-hero__logo img {
-      width: 100%;
-      height: auto; }
-  .c-hero__text {
-    margin-top: 1em;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold; }
 
 .c-header {
   padding-top: 1.5rem;
@@ -4549,7 +4533,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .c-purchase-link {
   color: #cf4647;
-  padding: .75em;
+  padding: 0.75em;
   font-size: 1.25rem;
   border-width: 1px;
   border-style: solid; }

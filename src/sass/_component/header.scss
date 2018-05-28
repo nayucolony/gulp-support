@@ -1,20 +1,19 @@
-
-
 .c-header {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   background-color: $red;
+
   &__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     @include mobile {
       flex-direction: column;
     }
   }
-
 
   &__brand {
     a {
@@ -22,10 +21,9 @@
       color: $white;
       font-weight: bold;
     }
+
     @include mobile {
       margin-bottom: 1rem;
     }
   }
-
 }
-

@@ -12,7 +12,9 @@
     "js:build": "webpack --mode production",
     "ftp": "gulp ftp",
     "lint:ejs": "ejslint src",
-    "lint":"eslint src"
+    "lint:css": "stylelint 'src/**/*scss'",
+    "lint:js": "eslint src",
+    "lint": "run-p lint:ejs lint:css lint:js"
   },
   "browserslist": [
     "last 2 Chrome versions",
@@ -42,6 +44,9 @@
     "normalize.css": "^7.0.0",
     "picturefill": "^3.0.2",
     "prismjs": "^1.14.0"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.2",
@@ -78,6 +83,8 @@
     "node-sass-package-importer": "^5.0.2",
     "npm-run-all": "^4.1.3",
     "style-loader": "^0.21.0",
+    "stylelint": "^9.2.1",
+    "stylelint-config-standard": "^18.2.0",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.0.9"
   }

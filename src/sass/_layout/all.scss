@@ -1,13 +1,14 @@
 .l-sidebar {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  grid-row: 1;
 }
 
 .l-footer {
   margin-top: 6rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  background:$red;
+  background: $red;
   color: white;
 }
 
@@ -20,10 +21,12 @@
 .l-main {
   grid-column: 2 / 3;
   grid-row: 1;
+
   &__inner {
     width: 768px;
     margin-left: auto;
     margin-right: auto;
+
     @include mobile {
       width: 100%;
       padding-left: 1.5rem;
@@ -35,6 +38,7 @@
 .l-section-wrap {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+
   @include mobile {
     width: 100%;
     padding-left: 1.5rem;
@@ -46,9 +50,9 @@
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
+
   @include mobile {
     width: 100%;
-
   }
 }
 
@@ -58,12 +62,9 @@
   grid-gap: 1.5rem;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+
   @include mobile {
     display: flex;
     flex-direction: column;
   }
-}
-
-.l-sidebar {
-  grid-row: 1;
 }

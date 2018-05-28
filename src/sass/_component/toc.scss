@@ -1,22 +1,26 @@
 .c-toc {
   position: sticky;
   top: 1.5rem;
+
   ul {
     list-style-type: none;
     font-size: 1rem;
     padding-left: 1.5rem;
-
   }
+
   li {
     &::before {
       content: "📕";
       display: inline;
     }
+
     &:not(:last-child) {
-      margin-bottom: .5em;
+      margin-bottom: 0.5em;
     }
+
     > ul {
       margin-top: 0.25em;
+
       li {
         &::before {
           content: "📗";
@@ -25,6 +29,7 @@
       }
     }
   }
+
   a {
     color: inherit;
   }
