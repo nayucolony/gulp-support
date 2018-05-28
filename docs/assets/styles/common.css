@@ -4514,7 +4514,7 @@ a.text-dark:hover, a.text-dark:focus {
     justify-content: space-between;
     align-items: center; }
   .c-header__brand a {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     color: #fff;
     font-weight: bold; }
 
@@ -6426,5 +6426,24 @@ h3 {
   .table .thead-dark th {
     color: inherit;
     border-color: #dee2e6; } }
+
+@media screen and (max-width: 768px) {
+      .l-main__inner {
+        width: 100%;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem; }
+    .l-section-wrap {
+      width: 100%;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem; }
+    .l-container {
+      width: 100%; }
+    .l-content-wrap {
+      display: flex;
+      flex-direction: column; }
+      .c-header__inner {
+        flex-direction: column; }
+    .c-header__brand {
+      margin-bottom: 1rem; } }
 
 /*# sourceMappingURL=maps/common.css.map */
