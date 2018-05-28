@@ -46,7 +46,31 @@
     "prismjs": "^1.14.0"
   },
   "stylelint": {
-    "extends": "stylelint-config-standard"
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "extend",
+            "at-root",
+            "debug",
+            "warn",
+            "error",
+            "if",
+            "else",
+            "for",
+            "each",
+            "while",
+            "mixin",
+            "include",
+            "content",
+            "return",
+            "function"
+          ]
+        }
+      ]
+    }
   },
   "devDependencies": {
     "autoprefixer": "^7.2.2",

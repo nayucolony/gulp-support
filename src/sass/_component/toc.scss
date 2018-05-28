@@ -6,25 +6,26 @@
     list-style-type: none;
     font-size: 1rem;
     padding-left: 1.5rem;
-  }
+    // 1階層目
+    li {
+      &::before {
+        content: "📕";
+        display: inline;
+      }
 
-  li {
-    &::before {
-      content: "📕";
-      display: inline;
-    }
+      ul {
+        margin-top: 0.25em;
 
-    &:not(:last-child) {
-      margin-bottom: 0.5em;
-    }
+        // 2階層目
+        li {
+          &::before {
+            content: "📗";
+            display: inline;
 
-    > ul {
-      margin-top: 0.25em;
-
-      li {
-        &::before {
-          content: "📗";
-          display: inline;
+            &:not(:last-child) {
+              margin-bottom: 0.5em;
+            }
+          }
         }
       }
     }

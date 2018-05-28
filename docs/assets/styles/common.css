@@ -4461,16 +4461,16 @@ a.text-dark:hover, a.text-dark:focus {
     list-style-type: none;
     font-size: 1rem;
     padding-left: 1.5rem; }
-  .c-toc li::before {
-    content: "📕";
-    display: inline; }
-  .c-toc li:not(:last-child) {
-    margin-bottom: 0.5em; }
-  .c-toc li > ul {
-    margin-top: 0.25em; }
-    .c-toc li > ul li::before {
-      content: "📗";
+    .c-toc ul li::before {
+      content: "📕";
       display: inline; }
+    .c-toc ul li ul {
+      margin-top: 0.25em; }
+      .c-toc ul li ul li::before {
+        content: "📗";
+        display: inline; }
+        .c-toc ul li ul li::before:not(:last-child) {
+          margin-bottom: 0.5em; }
   .c-toc a {
     color: inherit; }
 
