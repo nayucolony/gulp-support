@@ -52,10 +52,10 @@ gulp.task('img', () => {
   return gulp.src(path.srcImg)
     .pipe(changed(path.distImg))
     .pipe(imagemin([
-      // imageminMozjpeg(),
+      imageminMozjpeg({quality: '65-80'}),
       imagemin.gifsicle(),
-      // imageminPngquant({quality: '65-80'}),
-      // imagemin.optipng(),
+      imageminPngquant({quality: '65-80'}),
+      imagemin.optipng(),
       imagemin.svgo(),
     ]))
     .pipe(gulp.dest(path.distImg))
