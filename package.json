@@ -11,7 +11,8 @@
     "js:dev": "webpack --mode development -w",
     "js:build": "webpack --mode production",
     "ftp": "gulp ftp",
-    "lint": "ejslint src/ejs/*.ejs"
+    "lint:ejs": "ejslint src",
+    "lint":"eslint src"
   },
   "browserslist": [
     "last 2 Chrome versions",
